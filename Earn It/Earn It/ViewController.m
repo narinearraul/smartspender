@@ -13,6 +13,9 @@
 @end
 
 @implementation ViewController
+- (IBAction)child_button:(id)sender {
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

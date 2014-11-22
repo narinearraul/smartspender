@@ -136,10 +136,17 @@ app.post('/api/parent/addParent', function(req, res) {
 	});
 });
 
+app.get('/api/parent/getItem', function (req, res) {
+	Child.findOne({ "username": "Bobby" }, function(err, child) {
+		if (err)
+			res.send(err);
+		res.json(child.wishList);
+	});
+});
+
 
 app.post('/api/parent/setChores', function (req, res) {
 	console.log(req.body);
-
 	Child.where({ "username": "Bobby" }).update({"chores": req.body}, function(err, child) {
 		if (err)
 			res.send(err);
@@ -157,8 +164,10 @@ app.get('/api/parent/getChores', function (req, res) {
 
 app.get('/api/parent/getCheckedOffChores', function (req, res) {
 	Child.findOne({ "username": "Bobby" },function(err, child) {
+		
 		if (err)
 			res.send(err);
+		console.log("getting Checked off chores");
 		var chores = [];
 		for(chore in child.chores)
 		{
@@ -166,6 +175,24 @@ app.get('/api/parent/getCheckedOffChores', function (req, res) {
 			chores.push(chore); 
 		}
 		res.json(chores);
+	});
+});
+
+/////////////
+app.post('/api/parent/approveCheckedOffChores', function (req, res) {
+	var sum = 0;
+	console.log("approveCheckedOffChores: " );
+	console.log(req.body);
+	for (i in req.body)
+	{
+		sum += parseInt(req.body[i].value);
+		//	console.log(chore.value);
+	}
+	console.log("SUM: " + sum);
+	Child.where({ "username": "Bobby" }).update({"chores": req.body, "wishList.balance" : sum}, function(err, child) {
+		if (err)
+			res.send(err);
+		res.send(200);
 	});
 });
 

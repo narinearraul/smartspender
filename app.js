@@ -52,6 +52,7 @@ app.post('/api/child/addItemToWishlist', function (req, res) {
 
 
 app.get('/', function (req, res) {
+	res.send("Hello");
 	console.log("NO CALL");
 })
 

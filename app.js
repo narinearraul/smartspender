@@ -47,7 +47,7 @@ app.post('/api/child/addChild', function(req, res) {
 	var username = req.body.username;
 	Child.create({
 		username : username
-	}, function(err, todo) {
+	}, function(err, child) {
 		if (err)
 			res.send(err);
 
@@ -105,6 +105,54 @@ app.post('/api/child/updateBalance', function (req, res) {
 });
 
 // Parent
+
+app.post('/api/parent/addParent', function(req, res) {
+	var username = req.body.username;
+	Parent.create({
+		username : username
+	}, function(err, parent) {
+		if (err)
+			res.send(err);
+		Parent.findOne({"username": username},function(err, parent) {
+			if (err)
+				res.send(err)
+			res.json(parent);
+		});
+	});
+});
+
+
+app.post('/api/parent/setChores', function (req, res) {
+	console.log(req.body);
+
+	Child.where({ "username": "Bobby" }).update({"chores": req.body}, function(err, child) {
+		if (err)
+			res.send(err);
+		res.send(200);
+	});
+});
+
+app.get('/api/parent/getChores', function (req, res) {
+	Chore.find(function(err, chores) {
+		if (err)
+			res.send(err);
+		res.json(chores);
+	});
+});
+
+app.get('/api/parent/getCheckedOffChores', function (req, res) {
+	Child.findOne({ "username": "Bobby" },function(err, child) {
+		if (err)
+			res.send(err);
+		var chores = [];
+		for(chore in child.chores)
+		{
+			if(chore.status === 'IN_PROGRESS')
+			chores.push(chore); 
+		}
+		res.json(chores);
+	});
+});
 
 
 app.get('/', function (req, res) {

@@ -1,0 +1,25 @@
+{
+  "author": "us",
+  "name": "SmartSpender",
+  "scripts": {
+    "test": "grunt"
+  },
+  "description": "OpenTok server-side SDK",
+  "version": "2.2.4-alpha.1",
+  "homepage": "http://opentok.github.io/opentok-node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opentok/opentok-node.git"
+  },
+ 
+  "dependencies": {
+    "ejs": "^0.8.6",
+    "express": "^3.5.0",
+    "mongodb": "*",
+    "mongoose": "3.8.12",
+    "request": "^2.34.0",
+    "stringify-object": "^1.0.0",
+    "underscore": "~1.5.2",
+    "xmljson": "~0.2.0"
+  }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F8ADAF49-3005-4B99-92D8-33D91EA4E17C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Earn It</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>81666163-B480-4F88-886A-E03766CA404D</key>
+		<string>https://github.com/narinearraul/smartspender</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Earn It/Earn It.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>81666163-B480-4F88-886A-E03766CA404D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/narinearraul/smartspender</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>81666163-B480-4F88-886A-E03766CA404D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>81666163-B480-4F88-886A-E03766CA404D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>smartspender</string>
+		</dict>
+	</array>
+</dict>
+</plist>

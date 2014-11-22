@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0388A8FD1A209F140057F2A4 /* ServerCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388A8FC1A209F140057F2A4 /* ServerCommunication.m */; };
+		0388A9001A20B2040057F2A4 /* ChoresHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388A8FF1A20B2040057F2A4 /* ChoresHandler.m */; };
 		6DA693441A2095D900DFEEF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA693431A2095D900DFEEF9 /* main.m */; };
 		6DA693471A2095D900DFEEF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA693461A2095D900DFEEF9 /* AppDelegate.m */; };
 		6DA6934A1A2095D900DFEEF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA693491A2095D900DFEEF9 /* ViewController.m */; };
@@ -29,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0388A8FB1A209F140057F2A4 /* ServerCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerCommunication.h; path = ../ServerCommunication.h; sourceTree = "<group>"; };
+		0388A8FC1A209F140057F2A4 /* ServerCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerCommunication.m; path = ../ServerCommunication.m; sourceTree = "<group>"; };
+		0388A8FE1A20B2040057F2A4 /* ChoresHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoresHandler.h; sourceTree = "<group>"; };
+		0388A8FF1A20B2040057F2A4 /* ChoresHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoresHandler.m; sourceTree = "<group>"; };
 		6DA6933E1A2095D900DFEEF9 /* WorkForIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkForIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA693421A2095D900DFEEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DA693431A2095D900DFEEF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,8 +112,12 @@
 		6DA693411A2095D900DFEEF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0388A8FC1A209F140057F2A4 /* ServerCommunication.m */,
+				0388A8FB1A209F140057F2A4 /* ServerCommunication.h */,
 				6DA693421A2095D900DFEEF9 /* Info.plist */,
 				6DA693431A2095D900DFEEF9 /* main.m */,
+				0388A8FE1A20B2040057F2A4 /* ChoresHandler.h */,
+				0388A8FF1A20B2040057F2A4 /* ChoresHandler.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,6 +242,8 @@
 				6DA6934A1A2095D900DFEEF9 /* ViewController.m in Sources */,
 				6DA693471A2095D900DFEEF9 /* AppDelegate.m in Sources */,
 				6DA6936C1A2096C500DFEEF9 /* ChildViewController.m in Sources */,
+				0388A8FD1A209F140057F2A4 /* ServerCommunication.m in Sources */,
+				0388A9001A20B2040057F2A4 /* ChoresHandler.m in Sources */,
 				6DA693691A2096B100DFEEF9 /* ParentViewController.m in Sources */,
 				6DA693441A2095D900DFEEF9 /* main.m in Sources */,
 			);
@@ -424,6 +436,7 @@
 				6DA693631A2095D900DFEEF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DA693641A2095D900DFEEF9 /* Build configuration list for PBXNativeTarget "WorkForItTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +445,7 @@
 				6DA693661A2095D900DFEEF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

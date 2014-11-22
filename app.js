@@ -104,7 +104,7 @@ app.get('/api/child/getBalance', function (req, res) {
 		console.log(child.wishList.balance);
 		if (err)
 			res.send(err);
-		res.json(child.wishList.balance);
+		res.json(child.wishList);
 	});
 });
 

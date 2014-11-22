@@ -1,12 +1,13 @@
 {
   "author": "us",
-  "name": "SmartSpender",
+  "name": "EarnIt",
   "scripts": {
     "test": "grunt"
   },
   "description": "OpenTok server-side SDK",
   "version": "2.2.4-alpha.1",
   "homepage": "http://opentok.github.io/opentok-node",
+  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/opentok/opentok-node.git"

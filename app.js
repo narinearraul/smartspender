@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 app.use(express.static(__dirname + '/public'));
 app.use( express.static( "public" ) );
 
-mongoose.connect('URL'); //establishing connection to the MongoDB Database currently running on ucsd server
+mongoose.connect('mongodb://dloza@ucsd.edu:Earnit@proximus.modulusmongo.net:27017/X6yvoheh'); //establishing connection to the MongoDB Database currently running on ucsd server
 
 // models ===============================================
 

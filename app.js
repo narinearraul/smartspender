@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 app.use(express.static(__dirname + '/public'));
 app.use( express.static( "public" ) );
 
-mongoose.connect('mongodb://dloza@ucsd.edu:Earnit@proximus.modulusmongo.net:27017/X6yvoheh'); //establishing connection to the MongoDB Database currently running on ucsd server
+mongoose.connect('mongodb://137.110.91.32:27017'); //establishing connection to the MongoDB Database currently running on ucsd server
 
 // models ===============================================
 
@@ -16,7 +16,7 @@ var Chore = mongoose.model('Chore', {
 
 var Child = mongoose.model('Child', {
 	username: String,
-	wishlist: {
+	wishList: {
 		itemName: String,
 		price: Number
 	}, 
@@ -26,7 +26,7 @@ var Child = mongoose.model('Child', {
 			value: Number,
 			status: String
 		}
-	], 
+	]
 });
 
 
@@ -52,7 +52,13 @@ app.post('/api/child/addItemToWishlist', function (req, res) {
 
 
 app.get('/', function (req, res) {
-	res.send("Hello");
+	//res.send("Hello");
+	Child.find(function(err, todos) {
+		if (err)
+			res.send(err)
+		res.json(todos);
+	});
+
 	console.log("NO CALL");
 })
 

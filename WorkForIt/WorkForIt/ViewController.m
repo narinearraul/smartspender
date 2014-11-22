@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "ChoresHandler.h"
+#import "ServerCommunication.h"
 
 @interface ViewController ()
 

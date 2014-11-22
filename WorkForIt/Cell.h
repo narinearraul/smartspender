@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface Cell : NSObject
+@property (nonatomic)NSString *chore;
+@property (nonatomic)int earned;
+
+
+
+- (id)initWithChore:(NSString *)aChore
+               earned:(int)aEarned;
+
 
 @end

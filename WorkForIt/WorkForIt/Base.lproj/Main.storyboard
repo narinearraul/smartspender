@@ -70,6 +70,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ibs-3E-kOP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J3d-7Q-1af">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -78,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="2040" y="314"/>
         </scene>
-        <!--Child View Controller-->
+        <!--Progress-->
         <scene sceneID="hol-D1-68G">
             <objects>
                 <viewController id="6XV-h7-H1l" customClass="ChildViewController" sceneMemberID="viewController">
@@ -87,24 +88,112 @@
                         <viewControllerLayoutGuide type="bottom" id="xRI-O8-RcZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sNA-aJ-mGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_ruler" translatesAutoresizingMaskIntoConstraints="NO" id="xcq-WB-8Vm" userLabel="imageRuler">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="291" y="60" width="109" height="496"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_star" translatesAutoresizingMaskIntoConstraints="NO" id="gFK-yc-l2m" userLabel="imagePointer">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="249" y="313" width="42" height="40"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xcq-WB-8Vm"/>
+                                <exclude reference="gFK-yc-l2m"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xcq-WB-8Vm"/>
+                                <include reference="gFK-yc-l2m"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Progress" id="eU6-N6-hrg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="hsN-3f-N6T">
+                            <connections>
+                                <segue destination="62I-tX-vCm" kind="show" id="987-v9-bdu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8K-Ff-HhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="819" y="1026"/>
+            <point key="canvasLocation" x="828" y="998"/>
+        </scene>
+        <!--Chores View Controller-->
+        <scene sceneID="dRt-vL-g0D">
+            <objects>
+                <viewController id="62I-tX-vCm" customClass="ChoresViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7wE-sI-dVC"/>
+                        <viewControllerLayoutGuide type="bottom" id="huP-b7-Z2t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U9Y-L0-M1E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chores" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcT-8n-F9l">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="78" width="55" height="21"/>
+                                </variation>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xoe-of-Zyy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dcT-8n-F9l"/>
+                                <exclude reference="xoe-of-Zyy"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dcT-8n-F9l"/>
+                                <include reference="xoe-of-Zyy"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="xoe-of-Zyy" id="kwb-rA-eiG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kg9-dh-jfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626" y="1089"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="66u-ZI-cL0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vrl-pj-FkB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="vrl-pj-FkB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GaT-a2-3M0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sJa-01-AKP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="8Qy-bV-p8A"/>
                     </connections>
@@ -114,4 +203,8 @@
             <point key="canvasLocation" x="499.5" y="-379"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image_ruler" width="109" height="540"/>
+        <image name="image_star" width="42" height="40"/>
+    </resources>
 </document>

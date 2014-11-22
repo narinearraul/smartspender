@@ -10,4 +10,18 @@
 
 @implementation Cell
 
+- (id)initWithChore:(NSString *)aChore
+               earned:(int)aEarned
+{
+    if( self = [super init] )
+    {
+        _chore = aChore;
+        _earned = aEarned;
+    }
+    
+    return self;
+}
+
+
+
 @end

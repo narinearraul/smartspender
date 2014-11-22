@@ -10,4 +10,8 @@
 
 @interface TableViewCell : UITableViewCell
 
+@property(weak,nonatomic) IBOutlet UILabel *chore;
+@property(weak,nonatomic) IBOutlet UILabel *earned;
+
+
 @end

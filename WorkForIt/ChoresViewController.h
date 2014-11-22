@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChoresViewController : UIViewController
+@interface ChoresViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

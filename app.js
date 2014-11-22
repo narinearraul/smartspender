@@ -43,9 +43,24 @@ var Parent = mongoose.model('Parent', {
 // routes ===============================================
 
 // Child
-app.post('/api/child/addItem', function (req, res) {
-	console.log(req.body);
+app.post('/api/child/addChild', function(req, res) {
+	var username = req.body.username;
+	Child.create({
+		username : username
+	}, function(err, todo) {
+		if (err)
+			res.send(err);
 
+		Child.findOne({"username": username},function(err, child) {
+			if (err)
+				res.send(err)
+			res.json(child);
+		});
+	});
+});
+
+
+app.post('/api/child/addItem', function (req, res) {
 	Child.where({ "username": "Bobby" }).update({"wishList": req.body}, function(err, child) {
 		if (err)
 			res.send(err);
@@ -93,10 +108,10 @@ app.post('/api/child/updateBalance', function (req, res) {
 
 
 app.get('/', function (req, res) {
-	Child.find({"username": "Bobby"},function(err, todos) {
+	Child.find(function(err, child) {
 		if (err)
 			res.send(err)
-		res.json(todos);
+		res.json(child);
 	});
 
 	console.log("NO CALL");

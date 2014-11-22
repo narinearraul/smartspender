@@ -21,6 +21,7 @@
     "request": "^2.34.0",
     "stringify-object": "^1.0.0",
     "underscore": "~1.5.2",
-    "xmljson": "~0.2.0"
+    "xmljson": "~0.2.0",
+    "body-parser": "~1.5.2"
   }
 }

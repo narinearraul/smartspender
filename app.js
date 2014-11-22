@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
+app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
+app.use(bodyParser.json());                                     // parse applicaetion/json
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
 app.use(express.static(__dirname + '/public'));
 app.use( express.static( "public" ) );
@@ -17,9 +21,9 @@ var Chore = mongoose.model('Chore', {
 var Child = mongoose.model('Child', {
 	username: String,
 	wishList: {
-		itemName: String,
-		price: Number
-	}, 
+			itemName: String,
+			price: Number
+		},
 	chores: [
 		{
 			name: String,
@@ -28,7 +32,6 @@ var Child = mongoose.model('Child', {
 		}
 	]
 });
-
 
 var Parent = mongoose.model('Parent', { 
 	username: String,
@@ -39,21 +42,21 @@ var Parent = mongoose.model('Parent', {
 // routes ===============================================
 
 // Child
-app.post('/api/child/addItemToWishlist', function (req, res) {
-	Child.find(function(err, tokens) {
-				if(err)console.log(err);
-				
-				//res.send();
-				console.log("FOUND CHILD OBJECT");
-			  });
+app.post('/api/child/addItem', function (req, res) {
+	console.log(req.body);
+
+	Child.where({ "username": "Bobby" }).update({"wishList": req.body}, function(err, todos) {
+		if (err)
+			res.send(err)
+		res.send(200);
+	});
 })
 
 // Parent
 
 
 app.get('/', function (req, res) {
-	//res.send("Hello");
-	Child.find(function(err, todos) {
+	Child.find({"username": "Bobby"},function(err, todos) {
 		if (err)
 			res.send(err)
 		res.json(todos);

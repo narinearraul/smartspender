@@ -22,7 +22,8 @@ var Child = mongoose.model('Child', {
 	username: String,
 	wishList: {
 			itemName: String,
-			price: Number
+			price: Number,
+			balance: Number
 		},
 	chores: [
 		{
@@ -45,12 +46,48 @@ var Parent = mongoose.model('Parent', {
 app.post('/api/child/addItem', function (req, res) {
 	console.log(req.body);
 
-	Child.where({ "username": "Bobby" }).update({"wishList": req.body}, function(err, todos) {
+	Child.where({ "username": "Bobby" }).update({"wishList": req.body}, function(err, child) {
 		if (err)
-			res.send(err)
+			res.send(err);
 		res.send(200);
 	});
-})
+});
+
+app.get('/api/child/getChores', function (req, res) {
+	Child.findOne({"username": "Bobby"},function(err, child) {
+		if (err)
+			res.send(err);
+		res.json(child.chores);
+	});
+});
+
+app.post('/api/child/checkOffChores', function (req, res) {
+	console.log(req.body);
+
+	Child.where({ "username": "Bobby" }).update({"chores": req.body}, function(err, child) {
+		if (err)
+			res.send(err);
+		res.send(200);
+	});
+});
+
+app.get('/api/child/getBalance', function (req, res) {
+	Child.findOne({"username": "Bobby"},function(err, child) {
+		if (err)
+			res.send(err);
+		res.json(child.balance);
+	});
+});
+
+app.post('/api/child/updateBalance', function (req, res) {
+	console.log(req.body);
+
+	Child.where({ "username": "Bobby" }).update({"balance": req.body}, function(err, child) {
+		if (err)
+			res.send(err);
+		res.send(200);
+	});
+});
 
 // Parent
 

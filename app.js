@@ -44,6 +44,9 @@ var Parent = mongoose.model('Parent', {
 
 // Child
 app.post('/api/child/addChild', function(req, res) {
+	console.log("==========================")
+	console.log("/api/child/addChild");
+
 	var username = req.body.username;
 	Child.create({
 		username : username
@@ -61,6 +64,9 @@ app.post('/api/child/addChild', function(req, res) {
 
 
 app.post('/api/child/addItem', function (req, res) {
+	console.log("==========================")
+	console.log("/api/child/addItem");
+
 	Child.where({ "username": "Bobby" }).update({"wishList": req.body}, function(err, child) {
 		if (err)
 			res.send(err);
@@ -69,6 +75,9 @@ app.post('/api/child/addItem', function (req, res) {
 });
 
 app.get('/api/child/getChores', function (req, res) {
+	console.log("==========================")
+	console.log("/api/child/getChores");
+
 	Child.findOne({"username": "Bobby"},function(err, child) {
 		if (err)
 			res.send(err);
@@ -77,7 +86,8 @@ app.get('/api/child/getChores', function (req, res) {
 });
 
 app.post('/api/child/checkOffChores', function (req, res) {
-	console.log(req.body);
+	console.log("==========================")
+	console.log("/api/child/checkOffChores");
 
 	Child.where({ "username": "Bobby" }).update({"chores": req.body}, function(err, child) {
 		if (err)
@@ -87,17 +97,22 @@ app.post('/api/child/checkOffChores', function (req, res) {
 });
 
 app.get('/api/child/getBalance', function (req, res) {
+	console.log("==========================");
+	console.log("/api/child/getBalance");
+
 	Child.findOne({"username": "Bobby"},function(err, child) {
+		console.log(child.wishList.balance);
 		if (err)
 			res.send(err);
-		res.json(child.balance);
+		res.json(child.wishList.balance);
 	});
 });
 
 app.post('/api/child/updateBalance', function (req, res) {
-	console.log(req.body);
+	console.log("==========================")
+	console.log("/api/child/updateBalance");
 
-	Child.where({ "username": "Bobby" }).update({"balance": req.body}, function(err, child) {
+	Child.where({ "username": "Bobby" }).update({"wishList.balance": req.body.balance}, function(err, child) {
 		if (err)
 			res.send(err);
 		res.send(200);

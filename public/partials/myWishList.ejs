@@ -1,0 +1,31 @@
+<h3>
+    My Wish List
+</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Progress</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{$index + 1}}</td>
+            <td>{{wishList.itemName}}</td>
+            <td>{{wishList.price}}</td>
+            <td>
+                <progressbar max="100" value="value/max*100"><span style="color:black; white-space:nowrap;">
+                        <b>{{wishList.balance / wishList.price *100}}%</b></span></progressbar>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div id="add">
+    <a class="btn btn-success btn-lg btn-block" href="#addItem">Choose Another Item</a>
+</div>

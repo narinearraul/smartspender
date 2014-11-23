@@ -62,6 +62,16 @@ app.post('/api/child/addChild', function(req, res) {
 	});
 });
 
+app.get('/api/child/getItems', function (req, res) {
+	console.log("==========================")
+	console.log("/api/child/getItems");
+
+	Child.findOne({"username": "Bobby"},function(err, child) {
+		if (err)
+			res.send(err);
+		res.json(child.wishList);
+	});
+});
 
 app.post('/api/child/addItem', function (req, res) {
 	console.log("==========================")
@@ -74,6 +84,21 @@ app.post('/api/child/addItem', function (req, res) {
 	});
 });
 
+//app.post('/api/parent/addDefaultChore', function (req, res) {
+//	console.log("==========================")
+//	console.log("/api/parent/addDefaultChore");
+//
+//	Chore.create({
+//		name : "Hel",
+//		value : 10
+//	}, function(err, parent) {
+//		if (err)
+//			res.send(err);
+//		res.send(200);
+//	});
+//});
+
+
 app.get('/api/child/getChores', function (req, res) {
 	console.log("==========================")
 	console.log("/api/child/getChores");
@@ -84,6 +109,50 @@ app.get('/api/child/getChores', function (req, res) {
 		res.json(child.chores);
 	});
 });
+
+/* Checks off a single chore - very inefficient*/
+app.post('/api/child/checkOffSingleChore/:choreId', function (req, res) {
+	console.log("==========================")
+	console.log("/api/child/checkOffSingleChore");
+
+	Child.findOne({"username": "Bobby"},function(err, child) {
+		if (err)
+			res.send(err);
+
+		var value = child.chores[req.param("choreId")].value;
+		var sum = child.wishList.balance + value;
+		child.chores[req.param("choreId")].status = "PendingApproval";
+		Child.where({ "username": "Bobby" }).update({"chores": child.chores, "wishList.balance": sum}, function(err, child) {
+			if (err)
+				res.send(err);
+			console.log(child);
+		});
+		res.send(child.chores);
+	});
+
+
+		// By Name
+	//Child.findOne({"username": "Bobby"},function(err, child) {
+	//	if (err)
+	//		res.send(err);
+    //
+	//	var chores = [];
+	//	for(chore in child.chores)
+	//	{
+	//		if(chore.name === req.body.name)
+	//			chore.status = "IN_PROGRESS"
+    //
+	//		chores.push(chore)
+	//	}
+    //
+	//	Child.where({ "username": "Bobby" }).update({"chores": chores}, function(err, child) {
+	//		if (err)
+	//			res.send(err);
+	//		res.send(200);
+	//	});
+	//});
+});
+
 
 app.post('/api/child/checkOffChores', function (req, res) {
 	console.log("==========================")
@@ -172,7 +241,7 @@ app.get('/api/parent/getCheckedOffChores', function (req, res) {
 		for(chore in child.chores)
 		{
 			if(chore.status === 'IN_PROGRESS')
-			chores.push(chore); 
+			chores.push(chore);
 		}
 		res.json(chores);
 	});
@@ -198,6 +267,17 @@ app.post('/api/parent/approveCheckedOffChores', function (req, res) {
 
 
 app.get('/', function (req, res) {
+	res.render('index.ejs');
+	//Child.find(function(err, child) {
+	//	if (err)
+	//		res.send(err)
+	//	res.json(child);
+	//});
+    //
+	//console.log("NO CALL");
+});
+
+app.get('/getChildren', function (req, res) {
 	Child.find(function(err, child) {
 		if (err)
 			res.send(err)
@@ -205,7 +285,8 @@ app.get('/', function (req, res) {
 	});
 
 	console.log("NO CALL");
-})
+});
+
 
 var server = app.listen(3000, function () {
 

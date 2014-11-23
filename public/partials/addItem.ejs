@@ -1,0 +1,14 @@
+<h3>
+    What would you like?
+</h3>
+<form>
+    <div class="form-group">
+
+        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+        <input type="text" class="form-control text-center" placeholder="iPad" ng-model="item.itemName">
+        <input type="number" class="form-control text-center" placeholder="200" ng-model="item.price">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="addItem()">Add Item</button>
+</form>

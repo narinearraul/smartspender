@@ -1,0 +1,29 @@
+<h3>
+    My Chore List
+</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Chore Name</th>
+            <th>Value</th>
+            <th>Status</th>
+            <th>Finished?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="chore in chores" ng-class="{'success': chore.status == 'PendingApproval'}">
+            <td>{{$index + 1}}</td>
+            <td>{{chore.name}}</td>
+            <td>{{chore.value}}</td>
+            <td>{{chore.status}}</td>
+            <td>
+                    <input type="checkbox" ng-click="checkOffSingleChore($index)"> Complete
+
+                   <!--<p ng-class="{'ng-hide': chore.status == 'IN_PROGRESS'}">Waiting parent approval</p>-->
+            </td>
+        </tr>
+    </tbody>
+</table>

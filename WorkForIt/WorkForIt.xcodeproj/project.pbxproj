@@ -18,6 +18,9 @@
 		6DA6935E1A2095D900DFEEF9 /* WorkForItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6935D1A2095D900DFEEF9 /* WorkForItTests.m */; };
 		6DA693691A2096B100DFEEF9 /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA693681A2096B100DFEEF9 /* ParentViewController.m */; };
 		6DA6936C1A2096C500DFEEF9 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6936B1A2096C500DFEEF9 /* ChildViewController.m */; };
+		6DB271541A20B3AB00BCEE85 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB271531A20B3AB00BCEE85 /* Cell.m */; };
+		6DB271571A20BB3F00BCEE85 /* ChoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB271561A20BB3F00BCEE85 /* ChoresViewController.m */; };
+		6DB2715A1A20D8EB00BCEE85 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB271591A20D8EB00BCEE85 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		6DA693681A2096B100DFEEF9 /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParentViewController.m; path = ../ParentViewController.m; sourceTree = "<group>"; };
 		6DA6936A1A2096C500DFEEF9 /* ChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChildViewController.h; path = ../ChildViewController.h; sourceTree = "<group>"; };
 		6DA6936B1A2096C500DFEEF9 /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChildViewController.m; path = ../ChildViewController.m; sourceTree = "<group>"; };
+		6DB271521A20B3AB00BCEE85 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../Cell.h; sourceTree = "<group>"; };
+		6DB271531A20B3AB00BCEE85 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../Cell.m; sourceTree = "<group>"; };
+		6DB271551A20BB3F00BCEE85 /* ChoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChoresViewController.h; path = ../ChoresViewController.h; sourceTree = "<group>"; };
+		6DB271561A20BB3F00BCEE85 /* ChoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChoresViewController.m; path = ../ChoresViewController.m; sourceTree = "<group>"; };
+		6DB271581A20D8EB00BCEE85 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
+		6DB271591A20D8EB00BCEE85 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = ../TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +103,14 @@
 			isa = PBXGroup;
 			children = (
 				6DA693451A2095D900DFEEF9 /* AppDelegate.h */,
+				6DB271551A20BB3F00BCEE85 /* ChoresViewController.h */,
+				6DB271581A20D8EB00BCEE85 /* TableViewCell.h */,
+				6DB271591A20D8EB00BCEE85 /* TableViewCell.m */,
+				6DB271561A20BB3F00BCEE85 /* ChoresViewController.m */,
 				6DA6936A1A2096C500DFEEF9 /* ChildViewController.h */,
 				6DA6936B1A2096C500DFEEF9 /* ChildViewController.m */,
+				6DB271521A20B3AB00BCEE85 /* Cell.h */,
+				6DB271531A20B3AB00BCEE85 /* Cell.m */,
 				6DA693671A2096B100DFEEF9 /* ParentViewController.h */,
 				6DA693681A2096B100DFEEF9 /* ParentViewController.m */,
 				6DA693461A2095D900DFEEF9 /* AppDelegate.m */,
@@ -239,13 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB271571A20BB3F00BCEE85 /* ChoresViewController.m in Sources */,
 				6DA6934A1A2095D900DFEEF9 /* ViewController.m in Sources */,
 				6DA693471A2095D900DFEEF9 /* AppDelegate.m in Sources */,
 				6DA6936C1A2096C500DFEEF9 /* ChildViewController.m in Sources */,
 				0388A8FD1A209F140057F2A4 /* ServerCommunication.m in Sources */,
 				0388A9001A20B2040057F2A4 /* ChoresHandler.m in Sources */,
 				6DA693691A2096B100DFEEF9 /* ParentViewController.m in Sources */,
+				6DB2715A1A20D8EB00BCEE85 /* TableViewCell.m in Sources */,
 				6DA693441A2095D900DFEEF9 /* main.m in Sources */,
+				6DB271541A20B3AB00BCEE85 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

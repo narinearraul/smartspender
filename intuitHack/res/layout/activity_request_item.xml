@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="-30dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="248dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_weight="175.74"
+        android:text="Request an Item"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="30dp" 
+        android:textColor="#e84e40"/>
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="175.74"
+        android:ems="10"
+        android:hint="Item Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="175.74"
+        android:ems="10"
+        android:hint="Cost"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#e84e40"
+        android:onClick="sentRequest"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:textSize="28dp" />
+
+    <requestFocus />
+
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:paddingLeft="20dp" >
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/AppBaseTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="5dp"
+        android:text="Chore Assigned"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#e84e40"
+        android:textSize="30sp" />
+    
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#e84e40"
+            android:clickable="false"
+            android:onClick="findMatch"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="See Completed Chores Below and Check to Approve"
+            android:textColor="#FFFFFF" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Cleaned Room"
+        android:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="5dp"
+        android:text="Washed Car"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#e84e40"
+        android:onClick="choreAssigned"
+        android:text="Refresh"
+        android:textColor="#FFFFFF"
+        android:textSize="28dp" />
+
+</LinearLayout>

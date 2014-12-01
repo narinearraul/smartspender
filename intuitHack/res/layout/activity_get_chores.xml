@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:paddingLeft="20dp" >
+
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/AppBaseTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="5dp"
+        android:text="Your Chores"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#e84e40"
+        android:textSize="30sp" />
+    
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#e84e40"
+            android:clickable="false"
+            android:onClick="findMatch"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Select Completed Chores below to send for approval"
+            android:textColor="#FFFFFF" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Clean Room  - $1" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="5dp"
+        android:text="Do Dishes  - $1" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="5dp"
+        android:text="Walk the dog  - $2" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="5dp"
+        android:text="Wash Car  - $2" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </RelativeLayout>
+
+        <TextView
+        android:id="@+id/textView3"
+        style="@style/AppBaseTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="5dp"
+        android:text="Current Balance"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#e84e40"
+        android:textSize="30sp" />
+</LinearLayout>
